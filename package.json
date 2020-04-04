@@ -1,0 +1,11 @@
+{
+  "name": "GIST2Mail",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "dodok8",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3"
+  }
+}
