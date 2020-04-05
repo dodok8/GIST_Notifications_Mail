@@ -8,7 +8,7 @@ on:
     branches: [ master ]
   schedule:
     # 아침 8시는 UTC 로는 11pm 
-    - cron: "0 23 * * *"
+    - cron: "0 0 11 ? * MON,WED,FRI *"
 jobs:
   build:
 
@@ -16,14 +16,11 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [112.x]
 
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm start
       env:
