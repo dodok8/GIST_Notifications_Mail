@@ -8,14 +8,15 @@ on:
         branches: [master]
     schedule:
         # 아침 8시는 UTC 로는 11pm
-        - cron: "0 11 * * 1,3,5 "
+        - cron: "0 11 * * 1,3,5"
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
 
-        strategy:
-            matrix:
-                node-version: [12.x]
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -24,8 +25,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
+    - run: npm run build
     - run: npm start
       env:
         CI: true
-                  EMAIL: ${{ secrets.email_id }}
-                  PASSWORD: ${{ secrets.email_password }}
+
+        EMAIL: ${{ secrets.EMAIL }}
+        PASSWORD: ${{ secrets.PASSWORD }}
