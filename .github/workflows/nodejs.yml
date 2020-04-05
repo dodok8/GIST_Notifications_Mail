@@ -4,8 +4,9 @@
 name: Node.js CI
 
 on:
-    push:
-        branches: [master]
+# 테스트시에만 작동
+#    push:
+#        branches: [master]
     schedule:
         # 오후 8시, 매주 월수금 안내를 받게 됩니다.
         - cron: "0 11 * * 1,3,5"
