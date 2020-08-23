@@ -4,13 +4,12 @@
 name: Node.js CI
 
 on:
-    push:
-        branches: [master]
-    schedule:
-        - cron: "0 0 12 ? * * *"
+  push:
+    branches: [master]
+  schedule:
+    - cron: '0 1 * * *'
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -18,15 +17,15 @@ jobs:
         node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm start
-      env:
-        CI: true
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm start
+        env:
+          CI: true
 
-        EMAIL: ${{ secrets.EMAIL }}
-        PASSWORD: ${{ secrets.PASSWORD }}
+          EMAIL: ${{ secrets.EMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}
