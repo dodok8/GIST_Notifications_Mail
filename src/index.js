@@ -31,7 +31,7 @@ const getArticles = async (now) => {
     const compareDate = (article) => {
       return (now - article.date) / (1000 * 60 * 60 * 24) < 2;
     };
-    const result = articles.filter(compareDate);
+    const result = Array.from(new Set(articles.filter(compareDate)));
     return result;
   } catch (e) {
     console.error(e);
@@ -48,6 +48,7 @@ const getArticles = async (now) => {
     console.log("Nothing to Send");
     return;
   } else {
+    console.log(articles);
     const bodyList =
       "<ul>" +
       articles
