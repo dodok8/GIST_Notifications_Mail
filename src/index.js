@@ -31,7 +31,7 @@ const getArticles = async (now) => {
     const compareDate = (article) => {
       return (now - article.date) / (1000 * 60 * 60 * 24) < 2;
     };
-    const result = Array.from(new Set(articles.filter(compareDate)));
+    const result = articles.filter(compareDate).filter((article) => !article.fixed);
     return result;
   } catch (e) {
     console.error(e);
