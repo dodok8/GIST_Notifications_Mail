@@ -36,6 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@types/node", "npm:16.11.7"],
+            ["@types/nodemailer", "npm:6.4.4"],
             ["@typescript-eslint/eslint-plugin", "virtual:5d32941a70971829941f478ca56b46167e80fdd563bad24a78809ce0e3b540ed332f5bd75a52ce759956cd76b00cdfe4e40a842ad95210313fba46707d692dea#npm:5.3.1"],
             ["@typescript-eslint/parser", "virtual:5d32941a70971829941f478ca56b46167e80fdd563bad24a78809ce0e3b540ed332f5bd75a52ce759956cd76b00cdfe4e40a842ad95210313fba46707d692dea#npm:5.3.1"],
             ["axios", "npm:0.24.0"],
@@ -133,6 +134,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["npm:16.11.7", {
           "packageLocation": "./.yarn/cache/@types-node-npm-16.11.7-1799a0a435-2706403e6e.zip/node_modules/@types/node/",
           "packageDependencies": [
+            ["@types/node", "npm:16.11.7"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/nodemailer", [
+        ["npm:6.4.4", {
+          "packageLocation": "./.yarn/cache/@types-nodemailer-npm-6.4.4-c5c500abe2-16ed1bad2c.zip/node_modules/@types/nodemailer/",
+          "packageDependencies": [
+            ["@types/nodemailer", "npm:6.4.4"],
             ["@types/node", "npm:16.11.7"]
           ],
           "linkType": "HARD",
@@ -1051,6 +1062,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["gist2mail", "workspace:."],
             ["@types/node", "npm:16.11.7"],
+            ["@types/nodemailer", "npm:6.4.4"],
             ["@typescript-eslint/eslint-plugin", "virtual:5d32941a70971829941f478ca56b46167e80fdd563bad24a78809ce0e3b540ed332f5bd75a52ce759956cd76b00cdfe4e40a842ad95210313fba46707d692dea#npm:5.3.1"],
             ["@typescript-eslint/parser", "virtual:5d32941a70971829941f478ca56b46167e80fdd563bad24a78809ce0e3b540ed332f5bd75a52ce759956cd76b00cdfe4e40a842ad95210313fba46707d692dea#npm:5.3.1"],
             ["axios", "npm:0.24.0"],
