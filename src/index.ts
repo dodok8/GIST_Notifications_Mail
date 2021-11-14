@@ -1,7 +1,8 @@
 import axios from 'axios';
 import cheerio from 'cheerio';
-//https://stackoverflow.com/questions/27084159/cannot-read-property-createtransport-of-undefined
-import * as nodemailer from 'nodemailer';
+// https://stackoverflow.com/questions/64021077/default-export-not-explicitly-defined
+// 타입 정의 패키지(@types/nodemailer)가 default export가 없이 타입만 정의되어 있어서 no default export 가 뜨는데  컴파일 옵션을 주거나 네임 스페이스를 쓰는 식으로 해결할 수 있다.
+import nodemailer from 'nodemailer';
 
 const endpoint =
   'https://college.gist.ac.kr/prog/bbsArticle/BBSMSTR_000000005587/list.do';
@@ -60,7 +61,7 @@ const getArticles = async (now: Date) => {
 
     const result = articles
       .filter((article) => {
-        return (+now - +article.date) / (1000 * 60 * 60 * 24) < 2;
+        return (+now - +article.date) / (1000 * 60 * 60 * 24) < 3;
         //date를 산술연산에 하기 위해 +를 붙여서 바꿔줌
       })
       .filter((article) => !article.fixed);
@@ -85,7 +86,7 @@ async function sendEmail() {
         .map((article) => {
           const tags = `<li><a href="${getArticleEndpoint(article.link)}">${
             article.title
-          } ${article.date.toISOString().substring(0, 10)}</a>?</li>`;
+          } ${article.date.toISOString().substring(0, 10)}</a></li>`;
           return tags;
         })
         .reduce((accumulator, currentValue) => accumulator + currentValue)}
@@ -111,7 +112,7 @@ async function sendEmail() {
       };
 
       transporter.sendMail(mailOption);
-      console.log('Complete');
+      console.log('Complete Mail Sending');
     }
   } catch (error) {
     // instanceof는 타겟이 es5이하 버전이면 오류가 난다. 그래서 프로토타입을 직접 지정해줘야 한다.

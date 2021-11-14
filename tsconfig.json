@@ -4,7 +4,8 @@
     "allowJs": false,
     "target": "es6",
     "importHelpers": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
   },
   "include": ["./src/*"]
 }
