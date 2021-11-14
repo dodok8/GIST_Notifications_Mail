@@ -73,6 +73,7 @@ const getArticles = async (now: Date) => {
 };
 
 async function sendEmail() {
+  console.log('Start');
   const now = new Date();
   const header = `${now.getMonth() + 1}월 ${now.getDate()}일 GIST 대학 공지`;
 
@@ -111,7 +112,7 @@ async function sendEmail() {
         html: mailBody,
       };
 
-      transporter.sendMail(mailOption);
+      await transporter.sendMail(mailOption);
       console.log('Complete Mail Sending');
     }
   } catch (error) {
@@ -121,6 +122,7 @@ async function sendEmail() {
     if (error instanceof NoNoticeException) {
       console.log('Nothing to Send');
     } else {
+      console.log(error);
     }
   }
 }
