@@ -2,8 +2,9 @@
   "compilerOptions": {
     "outDir": "./built",
     "allowJs": false,
-    "target": "es5",
-    "importHelpers": true
+    "target": "es6",
+    "importHelpers": true,
+    "moduleResolution": "node"
   },
   "include": ["./src/*"]
 }
