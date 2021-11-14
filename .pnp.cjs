@@ -46,6 +46,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-prettier", "virtual:5d32941a70971829941f478ca56b46167e80fdd563bad24a78809ce0e3b540ed332f5bd75a52ce759956cd76b00cdfe4e40a842ad95210313fba46707d692dea#npm:4.0.0"],
             ["nodemailer", "npm:6.7.0"],
             ["prettier", "npm:2.4.1"],
+            ["tslib", "npm:2.3.1"],
             ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"]
           ],
           "linkType": "SOFT",
@@ -1072,6 +1073,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-prettier", "virtual:5d32941a70971829941f478ca56b46167e80fdd563bad24a78809ce0e3b540ed332f5bd75a52ce759956cd76b00cdfe4e40a842ad95210313fba46707d692dea#npm:4.0.0"],
             ["nodemailer", "npm:6.7.0"],
             ["prettier", "npm:2.4.1"],
+            ["tslib", "npm:2.3.1"],
             ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"]
           ],
           "linkType": "SOFT",
