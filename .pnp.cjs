@@ -35,12 +35,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
+            ["@types/node", "npm:16.11.7"],
             ["axios", "npm:0.24.0"],
             ["cheerio", "npm:1.0.0-rc.10"],
             ["nodemailer", "npm:6.7.0"],
             ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"]
           ],
           "linkType": "SOFT",
+        }]
+      ]],
+      ["@types/node", [
+        ["npm:16.11.7", {
+          "packageLocation": "./.yarn/cache/@types-node-npm-16.11.7-1799a0a435-2706403e6e.zip/node_modules/@types/node/",
+          "packageDependencies": [
+            ["@types/node", "npm:16.11.7"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["axios", [
@@ -194,6 +204,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["gist2mail", "workspace:."],
+            ["@types/node", "npm:16.11.7"],
             ["axios", "npm:0.24.0"],
             ["cheerio", "npm:1.0.0-rc.10"],
             ["nodemailer", "npm:6.7.0"],
