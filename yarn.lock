@@ -5,12 +5,12 @@ __metadata:
   version: 5
   cacheKey: 8
 
-"axios@npm:^0.21.2":
-  version: 0.21.4
-  resolution: "axios@npm:0.21.4"
+"axios@npm:^0.24.0":
+  version: 0.24.0
+  resolution: "axios@npm:0.24.0"
   dependencies:
-    follow-redirects: ^1.14.0
-  checksum: 44245f24ac971e7458f3120c92f9d66d1fc695e8b97019139de5b0cc65d9b8104647db01e5f46917728edfc0cfd88eb30fc4c55e6053eef4ace76768ce95ff3c
+    follow-redirects: ^1.14.4
+  checksum: 468cf496c08a6aadfb7e699bebdac02851e3043d4e7d282350804ea8900e30d368daa6e3cd4ab83b8ddb5a3b1e17a5a21ada13fc9cebd27b74828f47a4236316
   languageName: node
   linkType: hard
 
@@ -34,7 +34,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cheerio@npm:^1.0.0-rc.3":
+"cheerio@npm:^1.0.0-rc.10":
   version: 1.0.0-rc.10
   resolution: "cheerio@npm:1.0.0-rc.10"
   dependencies:
@@ -114,7 +114,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.0":
+"follow-redirects@npm:^1.14.4":
   version: 1.14.5
   resolution: "follow-redirects@npm:1.14.5"
   peerDependenciesMeta:
@@ -128,9 +128,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "gist2mail@workspace:."
   dependencies:
-    axios: ^0.21.2
-    cheerio: ^1.0.0-rc.3
-    nodemailer: ^6.4.16
+    axios: ^0.24.0
+    cheerio: ^1.0.0-rc.10
+    nodemailer: ^6.7.0
   languageName: unknown
   linkType: soft
 
@@ -146,7 +146,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemailer@npm:^6.4.16":
+"nodemailer@npm:^6.7.0":
   version: 6.7.0
   resolution: "nodemailer@npm:6.7.0"
   checksum: eebd6e5ac96bc77bd544eec939ef4a88dc60cbd5ef062995cb951141c41cf66db838cfbd7fe8ad2b1c8f8d23c839efb5519fa70e2be5d8e79c14b2459ebe4485

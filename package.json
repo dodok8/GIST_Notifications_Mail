@@ -5,9 +5,9 @@
     "author": "dodok8",
     "license": "MIT",
     "dependencies": {
-        "axios": "^0.21.2",
-        "cheerio": "^1.0.0-rc.3",
-        "nodemailer": "^6.4.16"
+        "axios": "^0.24.0",
+        "cheerio": "^1.0.0-rc.10",
+        "nodemailer": "^6.7.0"
     },
     "scripts": {
         "start": "node src/index.js"

@@ -35,7 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
-            ["axios", "npm:0.21.4"],
+            ["axios", "npm:0.24.0"],
             ["cheerio", "npm:1.0.0-rc.10"],
             ["nodemailer", "npm:6.7.0"]
           ],
@@ -43,11 +43,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["axios", [
-        ["npm:0.21.4", {
-          "packageLocation": "./.yarn/cache/axios-npm-0.21.4-e278873748-44245f24ac.zip/node_modules/axios/",
+        ["npm:0.24.0", {
+          "packageLocation": "./.yarn/cache/axios-npm-0.24.0-39e5c1e79e-468cf496c0.zip/node_modules/axios/",
           "packageDependencies": [
-            ["axios", "npm:0.21.4"],
-            ["follow-redirects", "virtual:e278873748b4e9d158db595d2f6cb0351c74052f52b53924aec4d9299e7b6babfb62aead374cf2f6e453bc8bea3b052380dc6b1137a162bbfc102bbb1c8cac42#npm:1.14.5"]
+            ["axios", "npm:0.24.0"],
+            ["follow-redirects", "virtual:39e5c1e79ea63134f0cf339f4463df92854aaf708a45210afd29a0b4b9f67f95b34a1abbcabaae6d0033ad99a1d5f690ab51ed8e5d3283b87ccbc3a9ab3ec05f#npm:1.14.5"]
           ],
           "linkType": "HARD",
         }]
@@ -174,10 +174,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:e278873748b4e9d158db595d2f6cb0351c74052f52b53924aec4d9299e7b6babfb62aead374cf2f6e453bc8bea3b052380dc6b1137a162bbfc102bbb1c8cac42#npm:1.14.5", {
-          "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-c5c4fc0c55/0/cache/follow-redirects-npm-1.14.5-7c681222a0-f004a76b2e.zip/node_modules/follow-redirects/",
+        ["virtual:39e5c1e79ea63134f0cf339f4463df92854aaf708a45210afd29a0b4b9f67f95b34a1abbcabaae6d0033ad99a1d5f690ab51ed8e5d3283b87ccbc3a9ab3ec05f#npm:1.14.5", {
+          "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-02c2a4727a/0/cache/follow-redirects-npm-1.14.5-7c681222a0-f004a76b2e.zip/node_modules/follow-redirects/",
           "packageDependencies": [
-            ["follow-redirects", "virtual:e278873748b4e9d158db595d2f6cb0351c74052f52b53924aec4d9299e7b6babfb62aead374cf2f6e453bc8bea3b052380dc6b1137a162bbfc102bbb1c8cac42#npm:1.14.5"],
+            ["follow-redirects", "virtual:39e5c1e79ea63134f0cf339f4463df92854aaf708a45210afd29a0b4b9f67f95b34a1abbcabaae6d0033ad99a1d5f690ab51ed8e5d3283b87ccbc3a9ab3ec05f#npm:1.14.5"],
             ["@types/debug", null],
             ["debug", null]
           ],
@@ -193,7 +193,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["gist2mail", "workspace:."],
-            ["axios", "npm:0.21.4"],
+            ["axios", "npm:0.24.0"],
             ["cheerio", "npm:1.0.0-rc.10"],
             ["nodemailer", "npm:6.7.0"]
           ],
