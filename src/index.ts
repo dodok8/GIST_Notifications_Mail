@@ -67,7 +67,7 @@ async function sendEmail() {
     const bodyList = `<ul>
       ${articles
         .map((article) => {
-          const tags = `<li><a href=\"${getArticleEndpoint(article.link)}\">${
+          const tags = `<li><a href="${getArticleEndpoint(article.link)}">${
             article.title
           } ${article.date.toISOString().substring(0, 10)}</a>?</li>`;
           return tags;
