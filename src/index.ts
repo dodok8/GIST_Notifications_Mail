@@ -122,7 +122,7 @@ async function sendEmail() {
     if (error instanceof NoNoticeException) {
       console.log('Nothing to Send');
     } else {
-      console.log(error);
+      console.error(error);
     }
   }
 }
