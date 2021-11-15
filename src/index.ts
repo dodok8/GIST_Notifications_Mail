@@ -82,6 +82,19 @@ async function sendEmail() {
     if (articles?.length === 0 || !articles) {
       throw new NoNoticeException();
     } else {
+      const style = `<style>
+      a {
+        color : #A7C7E7;
+        text-decoration : none;
+        line-height: 1.5
+      }
+
+      a:visited {
+        color : #C899C9;
+      }
+
+      </style>`;
+
       const bodyList = `<ul>
       ${articles
         .map((article) => {
@@ -93,8 +106,15 @@ async function sendEmail() {
         .reduce((accumulator, currentValue) => accumulator + currentValue)}
       </ul>`;
 
-      const mailBody = `<h1><a href="${endpoint}">${header}</a></h1>
+      const mailBody = `<!DOCTYPE html>
+      <html lang="ko">
+      <head>
+      ${style}
+      </head>
+      <body>
+      <h1>${header}</h1>
       ${bodyList}
+      </body>
       `;
 
       const transporter = nodemailer.createTransport({
@@ -110,12 +130,6 @@ async function sendEmail() {
         to: ID,
         subject: header,
         html: mailBody,
-        alternatives: [
-          {
-            contentType: 'text/x-web-markdown',
-            content: '**Hello world!**',
-          },
-        ],
       };
 
       await transporter.sendMail(mailOption);
