@@ -110,6 +110,12 @@ async function sendEmail() {
         to: ID,
         subject: header,
         html: mailBody,
+        alternatives: [
+          {
+            contentType: 'text/x-web-markdown',
+            content: '**Hello world!**',
+          },
+        ],
       };
 
       await transporter.sendMail(mailOption);
