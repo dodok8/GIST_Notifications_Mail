@@ -61,8 +61,11 @@ const getArticles = async (now: Date) => {
 
     const result = articles
       .filter((article) => {
-        return (+now - +article.date) / (1000 * 60 * 60 * 24) < 3;
+        return (
+          (now.valueOf() - article.date.valueOf()) / (1000 * 60 * 60 * 24) < 3
+        );
         //date를 산술연산에 하기 위해 +를 붙여서 바꿔줌
+        //아니면 valueOf()를 해서 나온 값 활용
       })
       .filter((article) => !article.fixed);
 
