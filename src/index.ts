@@ -7,11 +7,21 @@ import nodemailer from 'nodemailer';
 const endpoint =
   'https://college.gist.ac.kr/prog/bbsArticle/BBSMSTR_000000005587/list.do';
 
-const getArticleEndpoint = function (
-  link: RegExpMatchArray | null | undefined
-) {
+const getArticleEndpoint = function (link: string) {
   if (link) {
-    return `https://college.gist.ac.kr/prog/bbsArticle/BBSMSTR_000000005587/view.do?nttId=${link[0]}`;
+    return `https://college.gist.ac.kr/prog/bbsArticle/BBSMSTR_000000005587/view.do?nttId=${link}`;
+  } else {
+    return '';
+  }
+};
+
+const convertMatchArrayToString: (arr: RegExpMatchArray) => string = function (
+  arr
+) {
+  if (Array.isArray(arr)) {
+    return arr.reduce(
+      (previousValue, currentValue) => previousValue + currentValue
+    );
   } else {
     return '';
   }
@@ -23,6 +33,13 @@ class NoNoticeException extends Error {
     this.name = 'Nothing to Send';
   }
 }
+
+type Notice = {
+  fixed: boolean;
+  title: string;
+  link: string;
+  date: Date;
+};
 
 const ID = process.env.EMAIL;
 const PASSWORD = process.env.PASSWORD;
@@ -39,22 +56,19 @@ const getArticles = async (now: Date) => {
   try {
     const data = (await getHTML())?.data;
 
-    let articles: Array<{
-      fixed: boolean;
-      title: string;
-      link: RegExpMatchArray | null | undefined;
-      date: Date;
-    }> = [];
+    let articles: Array<Notice> = [];
     const $ = cheerio.load(data);
     const $bodyList = $('#txt > div > div.no-more-tables > table > tbody > tr');
     $bodyList.each(function () {
       articles.push({
         fixed: $(this).find('td:nth-child(1)').text() === '공지' ? true : false,
         title: $(this).find('td.subject > a').text(),
-        link: $(this)
-          .find('td.subject > a')
-          .attr('onclick')
-          ?.match(/([A-Z])\w+/),
+        link: convertMatchArrayToString(
+          $(this)
+            .find('td.subject > a')
+            .attr('onclick')
+            ?.match(/([A-Z])\w+/)
+        ),
         date: new Date(Date.parse($(this).find('td:nth-child(5)').text())),
       });
     });
